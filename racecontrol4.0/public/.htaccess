@@ -1,0 +1,7 @@
+# Envía todo lo que no sea un archivo real al controlador frontal.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+# Pasa la cabecera X-CSRF-Token a PHP en todos los entornos Apache.
+SetEnvIf X-CSRF-Token "(.+)" HTTP_X_CSRF_TOKEN=$1

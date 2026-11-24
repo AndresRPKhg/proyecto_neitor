@@ -1,0 +1,5 @@
+.rc-mapa-fondo{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:2000;padding:1rem}
+.rc-mapa-caja{background:var(--rc-superficie,#151218);color:var(--rc-texto,#EDE6DA);border:1px solid var(--rc-dorado,#C9A227);border-radius:8px;max-width:820px;width:100%;max-height:92vh;overflow:auto;padding:1.25rem}
+.rc-mapa-img{width:100%;max-height:60vh;object-fit:contain;background:var(--rc-superficie-2,#1D1822);border-radius:6px}
+.rc-mapa-vacio{padding:2.5rem 1rem;text-align:center;border:1px dashed var(--rc-borde,#2A2430);border-radius:6px}
+.rc-mapa-acc{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1rem}

@@ -1,0 +1,8 @@
+# La raíz abre index.php, que redirige a /public.
+DirectoryIndex index.php
+Options -Indexes
+
+# Protege el código y los archivos sensibles: solo /public debe ser accesible desde el navegador.
+RewriteEngine On
+RewriteRule ^(src|database|storage|bin|tests|resources|vendor|node_modules|\.github)(/|$) - [F,L]
+RewriteRule ^(\.env.*|composer\.(json|lock)|package(-lock)?\.json|vite\.config\.js|phpunit\.xml|SKILLS2\.md|README\.md)$ - [F,L]

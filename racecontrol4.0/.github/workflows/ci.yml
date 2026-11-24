@@ -1,0 +1,22 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '8.2', extensions: pdo_mysql, mbstring }
+      - run: composer install --no-interaction --prefer-dist
+      - name: Revisión de sintaxis (estilo)
+        run: find src public bin tests resources -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: PHPUnit
+        run: vendor/bin/phpunit
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci || npm install
+      - name: Build de Vite
+        run: npm run build

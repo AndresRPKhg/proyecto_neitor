@@ -1,0 +1,10 @@
+{
+  "name": "racecontrol/racecontrol",
+  "description": "Sistema web para organizar competencias automovilísticas y motociclísticas",
+  "type": "project",
+  "require": { "php": ">=8.2", "ext-pdo": "*", "ext-mbstring": "*" },
+  "require-dev": { "phpunit/phpunit": "^11.0" },
+  "autoload": { "psr-4": { "RaceControl\\": "src/" } },
+  "autoload-dev": { "psr-4": { "RaceControl\\Tests\\": "tests/" } },
+  "scripts": { "test": "phpunit" }
+}
